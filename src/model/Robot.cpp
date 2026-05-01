@@ -27,18 +27,32 @@ const std::vector<Point2D>& Robot::getHistory() const {
 
 void Robot::moveUp() {
     moveTo(x, y - 1);
+    if (currentHistoryIndex>=10){
+        moveTo(x, y - 1);
+    }
+
 }
 
 void Robot::moveDown() {
     moveTo(x, y + 1);
+    if (currentHistoryIndex>=10){
+        moveTo(x, y + 1);
+    }
 }
 
 void Robot::moveLeft() {
     moveTo(x - 1, y);
+    if (currentHistoryIndex>=10){
+        moveTo(x-1, y);
+    }
 }
+
 
 void Robot::moveRight() {
     moveTo(x + 1, y);
+    if (currentHistoryIndex>=10){
+        moveTo(x+1, y);
+    }
 }
 
 void Robot::undo() {
